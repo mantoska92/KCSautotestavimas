@@ -13,6 +13,7 @@ namespace baigiamasis.Tests
 
         private LoginPage loginPage;
         private HomePage homePage;
+        
 
         [SetUp]
         public void InitPages()
@@ -30,11 +31,13 @@ namespace baigiamasis.Tests
             loginPage.EnterPassword("slaptazodis");
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             loginPage.ClickSubmitLoginButton();
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
             homePage.AssertLogoutButtonIsVisible();
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
         }
 
+        
+        
         [TearDown]
         public void Logout()
         {

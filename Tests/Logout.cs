@@ -17,6 +17,7 @@ namespace baigiamasis.Tests
         [Test]
         public void TestLogout()
         {
+
             homePage.ClickLogout();
             loginPage.AssertLoginButtonIsVisible();
         }
