@@ -9,9 +9,11 @@ namespace baigiamasis.Pages
     public class HomePage : BasePage
     {
         public HomePage(IWebDriver driver) : base(driver) { }
-        private IWebElement logoutButtonElement => Driver.FindElement(By.CssSelector("//a[contains(text(),'Atsijungti')]"));
+        //private IWebElement logoutButtonElement => Driver.FindElement(By.CssSelector(".line:nth-child(3) > a"));
+        private IWebElement logoutButtonElement => Driver.FindElement(By.LinkText("Atsijungti"));
         private LoginPage loginPage;
-
+        private SearchPage searchPage;
+        private LanguagePage languagePage;
         public void ClickLogout()
         {
             logoutButtonElement.Click();

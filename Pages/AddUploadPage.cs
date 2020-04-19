@@ -1,7 +1,9 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace baigiamasis.Pages
 {
@@ -13,9 +15,9 @@ namespace baigiamasis.Pages
         private IWebElement chooseVehicleType => Driver.FindElement(By.CssSelector(".dropdown:nth-child(3) > .select .select"));
         private IWebElement motorcycleElement => Driver.FindElement(By.CssSelector(".dropdown-menu > .category-dropdown-item:nth-child(2) span:nth-child(2)"));
         private IWebElement motorcycleMakeElement => Driver.FindElement(By.CssSelector(".search-params-item:nth-child(1) .err-glow > input"));
-        private IWebElement motorcycleMakeSelectedt => Driver.FindElement(By.LinkText("BMW"));
-        private IWebElement motorcycleModelElement => Driver.FindElement(By.CssSelector(".search-params-item:nth-child(1) .err-glow > input"));
-        private IWebElement motorcycleModelSelected => Driver.FindElement(By.CssSelector(".open .category-dropdown-item:nth-child(5) span"));
+        private IWebElement motorcycleMakeSelected => Driver.FindElement(By.LinkText("BMW"));
+        private IWebElement motorcycleModelElement => Driver.FindElement(By.CssSelector("[placeholder='Modelis']"));
+        private IWebElement motorcycleModelSelected => Driver.FindElement(By.LinkText("G 650 GS"));
         private IWebElement motorcycleMakeYear => Driver.FindElement(By.CssSelector(".col-xs-6 .err-glow > input"));
         private IWebElement motorcycleMakeMonth => Driver.FindElement(By.CssSelector(".open .category-dropdown-item:nth-child(15) span"));
         private IWebElement motorcyclePower => Driver.FindElement(By.Name("moto_power"));
@@ -47,7 +49,7 @@ namespace baigiamasis.Pages
         }
         public void ClickMotorcycleMakeSelected()
         {
-            motorcycleMakeSelectedt.Click();
+            motorcycleMakeSelected.Click();
         }
         public void ClickMotorcycleModelElement()
         {
@@ -100,7 +102,17 @@ namespace baigiamasis.Pages
         public void SubmitDesktopAdvert()
         {
             submitDesktopAd.Click();
+            IWebElement advert = Driver.FindElement(By.CssSelector("div: nth - child(1) > div > h1"));
+            Assert.AreEqual("BMW G 650 GS / 2007 m.", advert.Text);
+
         }
+
+       /* public void AssertAdvert()
+        {
+            //Assert.AreEqual("https://www.autobilis.lt/advert/437925/bmw-g-650-gs-2007", Driver.Url);
+            IWebElement advert = Driver.FindElement(By.CssSelector("div: nth - child(1) > div > h1"));
+            Assert.AreEqual("BMW G 650 GS / 2007 m.",advert.Text);
+        }*/
 
 
     }
