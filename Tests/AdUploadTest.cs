@@ -23,51 +23,60 @@ namespace baigiamasis.Tests
         [Test]
 
         public void AdvertUploadTest()
+      
         {
             loginPage.ClickLoginbuttonElement();
-            
-            loginPage.EnterUserEmail("testeris@testas.lt");
-            
-            loginPage.EnterPassword("slaptazodis");
-            
-            loginPage.ClickSubmitLoginButton();
-            Thread.Sleep(6000);
-            uploadPage.ClickAddAdvertButton();
-            Thread.Sleep(6000);
-            uploadPage.ClickMotorcycleElemet();
-            Thread.Sleep(5000);
-            uploadPage.ClickChoseVehicleType();
-            
-            uploadPage.ClickMotorcycleMakeElement();
-            
-            uploadPage.ClickMotorcycleMakeSelected();
-           
-            uploadPage.ClickMotorcycleModelElement();
-           
-            uploadPage.ClickMotorcycleModelSelected();
-            
-            uploadPage.ClickMotorcycleMakeYear();
-           
-            uploadPage.ClickMotorcycleMakeMonth();
-           
-            uploadPage.ChoseMotorcyclePower();
-            
-            uploadPage.ClickCubicCapacityElement();
-           
-            uploadPage.ClickCubicCapacitySelected();
-            
-            uploadPage.ClickMotorcyclePrice();
-           
-            uploadPage.ClickPriceSelected();
-           
-            uploadPage.ClickAgreeTermsCheckBox();
-           
-            uploadPage.ClickGetNotificationsCheckBox();
-          
-            uploadPage.SubmitAdvert();
-           
-            uploadPage.SubmitDesktopAdvert();
+            Thread.Sleep(1000);
 
+            loginPage.EnterUserEmail("testeris@testas.lt");
+            Thread.Sleep(1000);
+
+            loginPage.EnterPassword("slaptazodis");
+            Thread.Sleep(1000);
+
+
+            loginPage.ClickSubmitLoginButton();
+            Thread.Sleep(1000);
+            uploadPage.ClickAddAdvertButton();
+            Thread.Sleep(2000);
+            uploadPage.ClickChoseVehicleType();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleElemet();
+            Thread.Sleep(1000);
+
+
+            uploadPage.ClickMotorcycleMakeElement();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleMakeSelected();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleModelElement();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleModelSelected();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleMakeYear();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcycleMakeMonth();
+            Thread.Sleep(1000);
+            uploadPage.ChoseMotorcyclePower();
+            Thread.Sleep(1000);
+            uploadPage.ClickCubicCapacityElement();
+            Thread.Sleep(1000);
+            uploadPage.ClickCubicCapacitySelected();
+            Thread.Sleep(1000);
+            uploadPage.ClickMotorcyclePrice();
+            Thread.Sleep(1000);
+            uploadPage.ClickPriceSelected();
+            Thread.Sleep(1000);
+            uploadPage.ClickAgreeTermsCheckBox();
+            Thread.Sleep(1000);
+            //uploadPage.ClickGetNotificationsCheckBox();
+            Thread.Sleep(1000);
+            uploadPage.SubmitAdvert();
+            Thread.Sleep(1000);
+            uploadPage.SubmitDesktopAdvert();
+            Thread.Sleep(6000);
+
+            //uploadPage.AssertAdvert();
         }
 
     }

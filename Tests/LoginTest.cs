@@ -25,11 +25,11 @@ namespace baigiamasis.Tests
         public void TestLogin()
         {
             loginPage.ClickLoginbuttonElement();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.EnterUserEmail("testeris@testas.lt");
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.EnterPassword("slaptazodis");
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.ClickSubmitLoginButton();
             Thread.Sleep(6000);
             homePage.AssertLogoutButtonIsVisible();

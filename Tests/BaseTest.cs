@@ -14,13 +14,13 @@ namespace baigiamasis.Tests
          protected IWebDriver Driver;
          protected LoginPage loginPage;
          protected HomePage homePage;
-
+         
         [SetUp]
         public void InitDriver()
         {
-            Driver = new ChromeDriver();
+            Driver = new ChromeDriver(GetChromeOptions());
             Driver.Url = "https://www.autobilis.lt/";
-            Driver.Manage().Window.Maximize();
+            //Driver.Manage().Window.Maximize();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             InitPages();
         }
@@ -29,6 +29,14 @@ namespace baigiamasis.Tests
             loginPage = new LoginPage(Driver);
             homePage = new HomePage(Driver);
         }
+
+        private static ChromeOptions GetChromeOptions()
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("incognito", "start-maximized");
+            return options;
+        }
+
 
         [TearDown]
         public void AfterEveryTest()

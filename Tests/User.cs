@@ -11,9 +11,9 @@ namespace baigiamasis.Tests
         public string UserEmail;
         public string Password;
 
-        public User(string useremail, string password)
+        public User(string user, string password)
         {
-            UserEmail = useremail;
+            UserEmail = user;
             Password = password;
         }
     }

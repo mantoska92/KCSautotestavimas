@@ -30,6 +30,7 @@ namespace baigiamasis.Tests
             searchPage.ClickCarModelElement();
             searchPage.ClickChosenModelElement();
             searchPage.ClickSubmitSearch();
+            Thread.Sleep(4000); 
 
             searchPage.AssertCarMakeElement();
         }
@@ -38,11 +39,11 @@ namespace baigiamasis.Tests
         public void SaveSearch()
         {
             loginPage.ClickLoginbuttonElement();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.EnterUserEmail("testeris@testas.lt");
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.EnterPassword("slaptazodis");
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Thread.Sleep(6000);
             loginPage.ClickSubmitLoginButton();
             Thread.Sleep(6000);
             searchPage.ClickDetailSearchElement();

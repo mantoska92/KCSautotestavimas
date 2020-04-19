@@ -40,12 +40,14 @@ namespace baigiamasis.Tests
             sendInformationButtonElement.Click();
             Thread.Sleep(5000);
 
-           // Assert.AreEqual("", yourNameElement.Text);
-            Assert.AreEqual("", yourEmailElement.Text);
-            Assert.AreEqual("", yourPhoneNumberElement.Text);
-            Assert.AreEqual("", yourCompanyNameElement.Text);
-            Assert.AreEqual("", yourMessageElement.Text);
-            //Assert.AreEqual()  
+            
+            
+            Assert.AreEqual("https://automanas.autobilis.lt/paslaugos-verslui", Driver.Url);
+            IWebElement contactMessage = Driver.FindElement(By.CssSelector(".et-pb-contact-message > p"));
+            Assert.AreEqual("Dėkojame, Jūsų informacija gauta. Netrukus susisieksime", contactMessage.Text);
+
+           
+
         }
 
         [Test]
@@ -53,7 +55,9 @@ namespace baigiamasis.Tests
         {
             sendInformationButtonElement.Click();
             Thread.Sleep(10000);
-            
+            Assert.AreEqual("https://automanas.autobilis.lt/paslaugos-verslui", Driver.Url);
+            IWebElement contactMessage = Driver.FindElement(By.CssSelector(".et-pb-contact-message > p"));
+            Assert.AreEqual("Please, fill in the following fields:", contactMessage.Text);
         }
 
 
