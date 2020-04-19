@@ -76,7 +76,7 @@ namespace baigiamasis.Tests
             uploadPage.SubmitDesktopAdvert();
             Thread.Sleep(6000);
 
-            //uploadPage.AssertAdvert();
+            uploadPage.AssertAdvert();
         }
 
     }

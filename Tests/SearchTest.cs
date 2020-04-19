@@ -52,11 +52,16 @@ namespace baigiamasis.Tests
             searchPage.ClickCarModelElement();
             searchPage.ClickChosenModelElement();
             searchPage.ClickSaveSearchButton();
+            Thread.Sleep(3000);
             searchPage.SavedSearchNameElement();
-            Thread.Sleep(5000);
+            Thread.Sleep(8000);
             searchPage.ClickSavedSearchSubmitButton();
-            Thread.Sleep(5000);
-
+            Thread.Sleep(20000);
+            searchPage.MyGrargeButton();
+            Thread.Sleep(20000);
+            searchPage.MySavedSearch();
+            
+            searchPage.AssertSavedSearch();
             
         }
     }

@@ -3,12 +3,12 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace baigiamasis.Tests
 {
-   public class Logout : BaseTest
+    public class Logout : BaseTest
     {
-
         [SetUp]
         public void Login()
         {

@@ -75,12 +75,13 @@ namespace baigiamasis.Tests
 
             Assert.AreEqual("https://www.autobilis.lt/user/profile", Driver.Url);
             IWebElement success = Driver.FindElement(By.XPath("/html/body/div[9]/p"));
-            Assert.AreEqual("Profilis atnaujintas sėkmingai.", success.Text);
-           
+           // Assert.AreEqual("Profilis atnaujintas sėkmingai.", success.Text);
+            Assert.AreEqual("Profilis atnaujintas sėkmingai.", success.GetAttribute("innerText"));
 
-          //  Assert.AreEqual("https://www.autobilis.lt/user/profile", Driver.Url);
-           // IWebElement success2 = Driver.FindElement(By.CssSelector(".sa-success"));
-           // Assert.AreEqual("Profilis atnaujintas sėkmingai.", success2.Text);
+
+            //  Assert.AreEqual("https://www.autobilis.lt/user/profile", Driver.Url);
+            // IWebElement success2 = Driver.FindElement(By.CssSelector(".sa-success"));
+            // Assert.AreEqual("Profilis atnaujintas sėkmingai.", success2.Text);
         }
 
 
