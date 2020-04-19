@@ -102,17 +102,17 @@ namespace baigiamasis.Pages
         public void SubmitDesktopAdvert()
         {
             submitDesktopAd.Click();
-            IWebElement advert = Driver.FindElement(By.CssSelector("div: nth - child(1) > div > h1"));
-            Assert.AreEqual("BMW G 650 GS / 2007 m.", advert.Text);
+           
 
         }
 
-       /* public void AssertAdvert()
+       public void AssertAdvert()
         {
-            //Assert.AreEqual("https://www.autobilis.lt/advert/437925/bmw-g-650-gs-2007", Driver.Url);
-            IWebElement advert = Driver.FindElement(By.CssSelector("div: nth - child(1) > div > h1"));
-            Assert.AreEqual("BMW G 650 GS / 2007 m.",advert.Text);
-        }*/
+            // Assert.AreEqual("", Driver.Url);
+            IWebElement success = Driver.FindElement(By.CssSelector(".advert-top-wraper > div:nth-child(1)"));
+            // Assert.AreEqual("Profilis atnaujintas sėkmingai.", success.Text);
+            Assert.AreEqual("BMW G 650 GS / 2007 M.\r\nPirkti papildomas paslaugas", success.GetAttribute("innerText"));
+        }
 
 
     }

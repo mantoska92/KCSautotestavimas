@@ -20,9 +20,11 @@ namespace baigiamasis.Pages
         private IWebElement saveSearchElement => Driver.FindElement(By.CssSelector(".detail-rezult-saveButtons:nth-child(5) > .saveSearch"));
         private IWebElement savedSearchNameElement => Driver.FindElement(By.CssSelector("fieldset > input"));
         private IWebElement submitSavedSearch => Driver.FindElement(By.CssSelector(".confirm"));
+        private IWebElement myGarage => Driver.FindElement(By.CssSelector(".btn-primary"));
+        private IWebElement mySavedSearch => Driver.FindElement(By.LinkText("Išsaugotos paieškos"));
 
-        
-      
+
+
         public void ClickDetailSearchElement()
         {
             detailSearchElement.Click();
@@ -61,12 +63,27 @@ namespace baigiamasis.Pages
         {
             submitSavedSearch.Click();
         }
+        public void MyGrargeButton()
+        {
+            myGarage.Click();
+        }
+        public void MySavedSearch()
+        {
+            mySavedSearch.Click();
+        }
 
        public void AssertCarMakeElement()
         {
             Assert.AreEqual("https://www.autobilis.lt/skelbimai/naudoti-automobiliai?category_id=1&order_by=created_at-desc&make_id%5B%5D=146&model_id%5B%5D=1850", Driver.Url);
             //IWebElement carMake = Driver.FindElement(By.LinkText("BMW"));
-          //  Assert.AreEqual("BMW 330", carMake.Text);
+           // Assert.AreEqual("BMW 330", carMake.Text);
+        }
+
+        public void AssertSavedSearch()
+        {
+            Assert.AreEqual("https://www.autobilis.lt/user/searches", Driver.Url);
+            IWebElement success = Driver.FindElement(By.CssSelector(".mySaved-Saved:nth-child(2) .mySaved-Saved-title"));
+            Assert.AreEqual("ISSAUGOTA PAIESKA", success.Text);
         }
 
       
